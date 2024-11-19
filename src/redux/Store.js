@@ -1,7 +1,7 @@
 import { createStore } from "redux"
-import CounterReducer from "./CounterReducer"
+import UserReducer from "./UserReducer"
 
-const Store = createStore(CounterReducer)
+const Store = createStore(UserReducer)
   
 
 

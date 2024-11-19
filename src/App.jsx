@@ -1,5 +1,6 @@
 import './App.css'
-import Countercomponent from './Countercomponent'
+// import Countercomponent from './Countercomponent'
+import UserCrudcomponent from './UserCrudcomponent'
 
 function App() {
   
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
       <h3>Redux Example</h3>
-      <Countercomponent />
+      <UserCrudcomponent />
     </>
   )
 }
