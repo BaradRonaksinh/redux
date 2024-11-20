@@ -18,7 +18,7 @@ export const dispfun = () => {
     return {type:disp}
 }
 
-export const delfun = () => {
+export const delfun = (id) => {  //add ID as a result we can delete dynamic id vise
     return{
         type:del,
         payload:id

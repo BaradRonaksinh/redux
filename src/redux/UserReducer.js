@@ -16,6 +16,25 @@ const UserReducer = (state = initialState, action) => {
                 return index!= action.payload
             })
         }
+        case upd: return{
+            ...state,
+            data:state.data.map((i,index)=>{
+                if(index==action.payload.id){
+                    i.name=action.payload.data.name
+                    i.age=action.payload.data.age
+                }
+                return i
+            })
+        }
+        // case upd: {
+        //     let res = state.data.map((i,index) => {
+        //         if(index==action.payload.id){
+        //             i.name=action.payload.name
+        //             i.age=action.payload.age
+        //         }
+        //         return i
+        //     })
+        // }
         default: return state
     }
 }
