@@ -7,6 +7,8 @@ export const upd = "UPDATE"
 // Delete
 export const del = "DELETE"
 
+
+// make  ACTIONS CREATORS *-*-*-*-*-*-*-*-*-*-*
 export const addfun = (data) => {
     return{
         type :add,

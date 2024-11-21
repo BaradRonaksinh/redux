@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addfun, delfun } from './redux/UserAction'
+import { addfun, delfun, updfun } from './redux/UserAction'
 
 const UserCrudcomponent = () => {
   const dispatch = useDispatch()
@@ -19,17 +19,25 @@ const UserCrudcomponent = () => {
   }
   const saveData = (e) => {
     e.preventDefault()
-    dispatch(addfun(data))
+    if (data.id != '') {
+      dispatch(updfun(data.id,data))
+    } else {
+      dispatch(addfun(data))
+    }
   }
 
-  // const editData = (id) => {
-  //   let res = alldata.find((i,index) => index == id)
-  //   setData({
-  //     id:id,
-  //     name:res.name,
-  //     age:res.age
-  //   })
-  // }
+  //edit
+  const editData = (id) => {
+
+    let res = alldata.find((i, index) => index == id)
+
+    console.log(res);
+    setData({
+      id: id, //changes...
+      name: res.name,
+      age: res.age
+    })
+  }
   return (
     <div>
       <h3>User CRUD Component</h3>
@@ -59,7 +67,7 @@ const UserCrudcomponent = () => {
                   <td>{i.name}</td>
                   <td>{i.age}</td>
                   <td>
-                    {/* <button onClick={editData(index)}>Edit</button> */}
+                    <button onClick={() => editData(index)}>Edit</button>
                     <button onClick={() => dispatch(delfun(index))}>Delete</button>
                   </td>
 

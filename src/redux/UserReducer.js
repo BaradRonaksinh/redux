@@ -26,6 +26,15 @@ const UserReducer = (state = initialState, action) => {
                 return i
             })
         }
+
+        // case del: return{
+        //     ...state,
+        //     data:state.data.filter((i,index) => {
+        //         return index!= action.payload
+        //     })
+        // }
+
+
         // case upd: {
         //     let res = state.data.map((i,index) => {
         //         if(index==action.payload.id){
