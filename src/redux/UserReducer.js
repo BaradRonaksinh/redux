@@ -26,6 +26,7 @@ const UserReducer = (state = initialState, action) => {
                 return i
             })
         }
+        default: return state
 
         // case del: return{
         //     ...state,
@@ -44,7 +45,6 @@ const UserReducer = (state = initialState, action) => {
         //         return i
         //     })
         // }
-        default: return state
     }
 }
 

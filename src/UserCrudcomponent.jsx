@@ -5,28 +5,30 @@ import { addfun, delfun, updfun } from './redux/UserAction'
 const UserCrudcomponent = () => {
   const dispatch = useDispatch()
   const alldata = useSelector((state) => state.data)
-  const [data, setData] = useState({
+  const [data, setData] = useState({   //SET DATA 
     id: "",
     name: "",
     age: ""
   })
-  const handleChange = (e) => {
+  const handleChange = (e) => {  //PROTOTYPE SKELETON
     const { name, value } = e.target
     setData({
       ...data,
       [name]: value
     })
   }
+
+  // Save  *-*-*-*-*-*-*-*-*
   const saveData = (e) => {
     e.preventDefault()
-    if (data.id != '') {
+    if (data.id != '') { //UPDATE  *-*-*-*-*-*
       dispatch(updfun(data.id,data))
     } else {
       dispatch(addfun(data))
     }
   }
 
-  //edit
+  //Edit  *-*-*-*-*-*-*-*-*-*
   const editData = (id) => {
 
     let res = alldata.find((i, index) => index == id)
